@@ -8,20 +8,11 @@ If you find speechmetrics useful, you are welcome to cite the original papers fo
 > Please let me know if you think of some metric with available python implementation that could be included here!
 
 # Installation
-As of our recent tests, installation goes smoothly on ubuntu, but there may be some compiler errors for `pypesq` on iOs.
-
-
-For cpu usage:
-```
-pip install numpy
-pip install git+https://github.com/aliutkus/speechmetrics#egg=speechmetrics[cpu]
-```
-
-For gpu usage (on the MOSNet)
+Use following recipe to install in one step:
 
 ```
-pip install numpy
-pip install git+https://github.com/aliutkus/speechmetrics#egg=speechmetrics[gpu]
+pip install numpy && pip install cython && pip install .
+
 ```
 
 # Usage

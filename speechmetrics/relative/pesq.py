@@ -8,7 +8,7 @@ class PESQ(Metric):
         self.fixed_rate = 16000
 
     def test_window(self, audios, rate):
-        from pypesq import pypesq
+        from pesq import pesq
 
         if len(audios) != 2:
             raise ValueError('PESQ need§s a reference and a test signals.')
@@ -17,9 +17,9 @@ class PESQ(Metric):
             raise ValueError("sample rate must be 16000 or 8000 for PESQ ...")
 
         if rate == 16000:
-            return {'pesq': pypesq(fs=rate, ref=audios[1], deg=audios[0], mode='wb')}
+            return {'pesq': pesq(fs=rate, ref=audios[1], deg=audios[0], mode='wb')}
         elif rate == 8000:
-            return {'pesq': pypesq(fs=rate, ref=audios[1], deg=audios[0], mode='nb')}
+            return {'pesq': pesq(fs=rate, ref=audios[1], deg=audios[0], mode='nb')}
 
 
 def load(window, hop=None):
